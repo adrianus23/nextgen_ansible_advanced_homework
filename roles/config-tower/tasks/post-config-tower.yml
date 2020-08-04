@@ -1,5 +1,5 @@
 - name: Create Homework Assignment project
-  task:
+  block:
     - name: Machine Credentail to connect to workstation using openstack.pub
       tower_credential:
         name: Connect_to_workstation
