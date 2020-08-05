@@ -8,6 +8,8 @@ osp_servers:
     key_name: ansible_ssh
     flavor: m1.medium
     security_group: frontend
+    nics: 'int_network'
+    floating_ip: 'ext_network'
     meta:
       - { group: frontends, deployment_name: QA}
   app1:
@@ -17,6 +19,8 @@ osp_servers:
     key_name: ansible_ssh
     flavor: m1.medium
     security_group: apps
+    nics: 'int_network'
+    floating_ip: 'ext_network'
     meta:
       - { group: apps, deployment_name: QA}
   app2:
@@ -26,6 +30,8 @@ osp_servers:
     key_name: ansible_ssh
     flavor: m1.medium
     security_group: apps
+    nics: 'int_network'
+    floating_ip: 'ext_network'
     meta:
       - { group: apps, deployment_name: QA}
   db:
@@ -35,5 +41,7 @@ osp_servers:
     key_name: ansible_ssh
     flavor: m1.medium
     security_group: db
+    nics: 'int_network'
+    floating_ip: 'ext_network'
     meta:
       - { group: appdbs, deployment_name: QA}
