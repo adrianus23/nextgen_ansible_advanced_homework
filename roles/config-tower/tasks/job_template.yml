@@ -1,10 +1,10 @@
 - name: Project Test OSP Instances
   command: |
-    tower-cli project create  --name "TestTest{{proj_name}}" --description "Homework Assignment" --organization "{{org_name}}" --scm-type "git" --scm-branch "{{scm_branch}}" --scm-url "{{scm_url}}" --scm_update_on_launch true
+    tower-cli project create  --name "TestTest{{proj_name}}" --description "Homework Assignment" --organization "{{org_name}}" --scm-type "git" --scm-branch "{{scm_branch}}" --scm-url "{{scm_url}}" --scm-update-on-launch true
 
 - name: Project OSP Instances
   command: |
-    tower-cli project create  --name "{{proj_name}}" --description "Homework Assignment" --organization "{{org_name}}" --scm-type "git" --scm-branch "{{scm_branch}}" --scm-url "{{scm_url}}" --scm_update_on_launch true
+    tower-cli project create  --name "{{proj_name}}" --description "Homework Assignment" --organization "{{org_name}}" --scm-type "git" --scm-branch "{{scm_branch}}" --scm-url "{{scm_url}}" --scm-update-on-launch true
 
 - name: Update project OSP Instances
   command: |
