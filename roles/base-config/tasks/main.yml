@@ -8,8 +8,9 @@
     replace: 'Defaults  !requiretty'
     backup: yes
   tags: base-config
-  
+
 - name: add new repo
+  template:
     src: repos_template.j2
     dest: /etc/yum.repos.d/homework.repo
   tags: base-config
