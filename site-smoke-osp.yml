@@ -13,7 +13,7 @@
   - name: Curl website
     uri:
       url: "http://{{item.public_v4}}"
-        return_content: yes
+      return_content: yes
       until: '"Ansible has done its job" in result.content'
       retries: 10
       delay: 1
