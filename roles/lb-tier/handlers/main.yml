@@ -4,4 +4,9 @@
   service:
     name: tomcat
     state: started
+    
+- name: restart_haproxy
+  service:
+    name: haproxy
+    state: restarted
 

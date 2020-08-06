@@ -1,2 +1,37 @@
 ---
+- name: install tomcat package(s)
+  package:
+    name: "{{ app_server_packages }}"
+    state: present
+  tags:
+    - tomcat
 
+- name: enable tomcat at boot
+  service:
+    name: tomcat
+    enabled: yes
+  tags:
+    - tomcat
+
+
+- name: create tomcat content directory
+  file:
+    path: "{{tomcat_web_root}}"
+    state: directory
+  tags:
+    - tomcat
+
+- name: copy static index.html to tomcat webapps/ansible/index.html
+  template:
+    src: index.html.j2
+    dest: "{{tomcat_web_root}}/index.html"
+    mode: 0644
+  tags:
+    - tomcat
+
+- name: start Tomcat
+  service:
+    name: "{{ app_server_service }}"
+    state: started
+  tags:
+    - apps
