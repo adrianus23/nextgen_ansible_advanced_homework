@@ -14,9 +14,6 @@
     uri:
       url: "http://{{item.public_v4}}"
       return_content: yes
-      until: '"Ansible has done its job" in result.content'
-      retries: 10
-      delay: 1
     with_items:
         - "{{ server_info.openstack_servers }}"
     register: webpage
