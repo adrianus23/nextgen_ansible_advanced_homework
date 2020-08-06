@@ -9,16 +9,15 @@
     backup: yes
   tags: base-config
 
-- name: add new repo
+- name: enable repos
   template:
     src: repos_template.j2
     dest: /etc/yum.repos.d/homework.repo
   tags: base-config
-
-- name: enable repos
-  rhsm_repository:
-    name: rhel-7-server-rpms
-  tags: base-config
  
-#- name: install base tools and packages
-
+- name: install base tools and packages
+  yum:
+    name: 
+      - httpie
+      - python-pip
+    state: latest
